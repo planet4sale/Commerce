@@ -1,0 +1,41 @@
+Commerce?
+====================
+...imports Commerce entities (e.g. products) using Feeds.
+
+Installation
+============
+
+- Install & enable the Feeds (including UI) Commerce modules (including product, price and their UI modules), Commerce Feeds and Commerce Features module
+- Go to admin/structure/feeds and add a new importer
+- Select the "Commerce Product processor"
+- In Settings, select a product type to use to create new product entities
+- In Mapping, select how raw input fields map on fields of the product entity. Select at least Product SKU (make unique) and Product Title.
+
+
+Example configuration and feature
+=================================
+
+The commerce_feeds_example feature is included to quickly show 
+- how a comma-separated file can be used to import product entities. These are effictively releases from Discogs API
+- how the same comma-separated file can be used to import product display nodes linking to product entities via their SKU. The nodes are equivalent to main release in Dispcogs API 
+
+1. Import product entities.
+- Install the feature module "commerce_feeds_example"
+- Go to /import and click 'Product importer'
+- Enter a release url  (e.g. examples at Discogs 2.0 help page "http://www.discogs.com/help/api")  in "URL" textfield. Hit import button
+- Go to /admin/commerce/products to see the imported products
+
+2. Import product display nodes.
+Repeat the same steps but chose 'Product reference importer' and select the same 
+URL'.
+
+TODO
+====
+- Documentation on architecture
+- Add "product field" to "main release" node (in function discogs_commerce_field_default_fields)
+- "main release" node should have form / add to cart button on install
+- Improve UI (alllow logical search terms e,g, name of artist, then wrap in "url request" request before sending request)
+- Feeds fetcher module needs testing / improvements
+- Import search api requests (example at Discogs 2.0 help page) 
+- Mapper to import data for field holding multiple items. Investigate functionality of - Add choice of XMLpath parser. 
+- Importer for Artists or Labels as node with releases as probuct.
