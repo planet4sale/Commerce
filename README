@@ -37,5 +37,6 @@ TODO
 - Improve UI (alllow logical search terms e,g, name of artist, then wrap in "url request" request before sending request)
 - Feeds fetcher module needs testing / improvements
 - Import search api requests (example at Discogs 2.0 help page) 
-- Mapper to import data for field holding multiple items. Investigate functionality of - Add choice of XMLpath parser. 
+- Mapper to import data for field holding multiple items. Investigate functionality of
+- Add choice of XMLpath parser. 
 - Importer for Artists or Labels as node with releases as probuct.

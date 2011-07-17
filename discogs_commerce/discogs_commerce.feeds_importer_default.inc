@@ -26,9 +26,8 @@ function discogs_commerce_feeds_importer_default() {
     'parser' => array(
       'plugin_key' => 'FeedsJSONPathParser',
       'config' => array(
-       'debug' => array(
-        'options' => array(       
-          'context' => 'context',
+       'context' => '$.resp.release',         
+      'sources' => array(
              'jsonpath_parser:0'   => 'id',
              'jsonpath_parser:1'   => 'title',
              'jsonpath_parser:2'   => 'labels[*].catno',
@@ -203,7 +202,8 @@ function discogs_commerce_feeds_importer_default() {
           'source' => 'jsonpath_parser:6',
           'target' => 'field_notes',
           'unique' => FALSE,
-          7 => array(
+        ),	  
+       7 => array(
           'source' => 'jsonpath_parser:7',
           'target' => 'field_year',
           'unique' => FALSE,
