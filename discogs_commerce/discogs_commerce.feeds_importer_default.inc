@@ -57,7 +57,7 @@ function discogs_commerce_feeds_importer_default() {
     'processor' => array(
       'plugin_key' => 'FeedsCommerceProductProcessor',
       'config' => array(
-        'product_type' => 'product',
+        'product_type' => 'release',
         'author' => '1',
         'mappings' => array(
           0 => array(
